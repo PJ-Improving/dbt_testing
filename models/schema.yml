@@ -1,0 +1,43 @@
+version: 2
+
+sources:
+  - name: tpch_sample
+    database: SNOWFLAKE_SAMPLE_DATA
+    schema: TPCH_SF{{ var('tpch_size', 10) }}
+    tables:
+      - name: LINEITEM
+      - name: CUSTOMER
+      - name: ORDERS
+      - name: PARTSUPP
+      - name: SUPPLIER
+      - name: PART
+      - name: NATION
+      - name: REGION
+  - name: tpcds_sample
+    database: SNOWFLAKE_SAMPLE_DATA
+    schema: TPCDS_SF10TCL
+    tables:
+      - name: CUSTOMER
+      - name: CUSTOMER_ADDRESS
+      - name: CUSTOMER_DEMOGRAPHICS
+      - name: HOUSEHOLD_DEMOGRAPHICS
+  - name: DEMO
+    database: DATA_REPOSITORY
+    schema: DEMO
+    tables:
+      - name: AIRPORT
+      - name: AIRLINE
+      - name: FLIGHT
+  - name: netflix
+    database: BRONZE
+    schema: LANDING
+    tables:
+      - name: NETFLIX_BEST_MOVIE
+      - name: NETFLIX_BEST_MOVIE_BY_YEAR
+      - name: NETFLIX_BEST_SHOW
+      - name: NETFLIX_BEST_SHOW_BY_YEAR
+      - name: NETFLIX_DATASET_MOVIE
+      - name: NETFLIX_DATASET_RATING
+      - name: NETFLIX_ORIGINALS
+      - name: NETFLIX_RAW_CREDITS
+      - name: NETFLIX_RAW_TITLES
